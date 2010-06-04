@@ -1,3 +1,4 @@
 template.htaccess
 template.install.php
 modules/database/config/database.php
+*.swp
