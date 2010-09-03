@@ -12,8 +12,8 @@ class Controller_Welcome extends Controller_Template {
                                         ->bind('p1',$par1)
                                         ->bind('p2',$par2);
                                         
-        $par1 = 'news 1';
-        $par2 = 'news 2';
+        $par1 = 'This is a tutorial from http://kupreev.com/page/user-input-kohana-3-en';
+        $par2 = 'and this is my playground :)';
         $this->template->navigation = $this->_simple_nav();
         
         
