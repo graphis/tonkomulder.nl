@@ -1,10 +1,13 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Welcome extends Controller {
+class Controller_Welcome extends Controller 
+{
 
 	public function action_index()
 	{
-		$this->request->response = 'hello, world!';
+		$view = View::factory('welcome')
+			->set('content', 'hello, world!')
+			->set('title', 'www.tonkomulder.nl');
+		$this->request->response = $view;
 	}
-
-} // End Welcome
+}

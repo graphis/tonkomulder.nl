@@ -1,4 +1,5 @@
 template.htaccess
 template.install.php
-modules/database/config/database.php
+application/config/
 *.swp
+logs/
