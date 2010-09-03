@@ -4,3 +4,4 @@ application/config/
 *.swp
 logs/
 application/bootstrap.php
+nbproject/
