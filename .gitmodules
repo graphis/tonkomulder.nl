@@ -1,0 +1,6 @@
+[submodule "kohana-cdm"]
+	path = kohana-cdm
+	url = git://github.com/jylinman/kohana-cdm.git
+[submodule "modules/cassandra"]
+	path = modules/cassandra
+	url = git://github.com/jylinman/kohana-cdm.git

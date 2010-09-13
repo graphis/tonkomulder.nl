@@ -9,8 +9,13 @@ Route::set('psy', 'psy/(<action>)')
                 'controller' => 'psy',
                 'action'     => 'index',
                 ));
-Route::set('default', '(<action>(/<id>))')
+/*Route::set('default', '(<action>(/<id>))')
         ->defaults(array(
                     'controller' => 'welcome',
                     'action'     => 'index',
-                    ));
+                    ));*/
+Route::set('default', '(<action>(/<id>))')
+        ->defaults(array(
+            'controller' => 'form',
+            'action' => 'index',
+        ));
