@@ -2,12 +2,37 @@ body {
 	background-color: #333;
 }
 
-div.container {
+body a:link, a:visited {
+    text-decoration: none;
+    color: #000;
+}
 
+body a:hover {
+    text-decoration: underline;
+}
+
+div.container {
+    width: 75%;
+    margin-left: 10%;
+    margin-right: 20%;
 }
 
 div.navigation {
+    background-color: #fff;
+    color: #000;
+    margin: 5px;
+    padding: 10px 15px 5px 10px;
+}
 
+div.navigation a:link, a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+div.navigation a:hover {
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
 }
 
 div.content {
