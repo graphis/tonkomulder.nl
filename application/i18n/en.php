@@ -3,7 +3,7 @@
 return array
 (
     'layout_title' => 'www.tonkomulder.nl',
-    'main_welkom' => 'Welkom',
-    'main_welkom_text' => 'Welkom op www.tonkomulder.nl',
+    'main_welkom' => 'Welcome',
+    'main_welkom_text' => 'Welcome at www.tonkomulder.nl',
 )
 ?>

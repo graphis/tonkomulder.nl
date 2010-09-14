@@ -4,9 +4,11 @@
  * defaults for the URI.
  */
 
-Route::set('default', '(<language>)(/)(<action>(/<id>))')
-        ->defaults(array(
-                    'controller' => 'welcome',
-                    'action'     => 'index',
-		    'language' => $default_lang,
-                    ));
+Route::set('default', '(<language>)(/)(<action>(/<id>))',
+    array('language' => $langs_abr,
+        'action' => 'index'))
+    ->defaults(array(
+        'controller' => 'welcome',
+        'action'     => 'index',
+        'language' => $default_lang,
+    ));
