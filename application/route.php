@@ -4,18 +4,9 @@
  * defaults for the URI.
  */
 
-Route::set('psy', 'psy/(<action>)')
-    ->defaults(array(
-                'controller' => 'psy',
-                'action'     => 'index',
-                ));
-/*Route::set('default', '(<action>(/<id>))')
+Route::set('default', '(<language>)(/)(<action>(/<id>))')
         ->defaults(array(
                     'controller' => 'welcome',
                     'action'     => 'index',
-                    ));*/
-Route::set('default', '(<action>(/<id>))')
-        ->defaults(array(
-            'controller' => 'form',
-            'action' => 'index',
-        ));
+		    'language' => $default_lang,
+                    ));
