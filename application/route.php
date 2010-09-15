@@ -14,6 +14,15 @@ Route::set('default', '(<language>)(/)(<action>(/<id>))',
         'language' => $default_lang,
     ));
 
+Route::set('login', '(<language>)(/)login(/<action>(/<id>))',
+    array('language' => $langs_abr,
+        'action' => 'index'))
+    ->defaults(array(
+        'controller' => 'login',
+        'action' => 'index',
+        'language' => $default_lang,
+    ));
+
 Route::set('welcome', '(<language>)(/)welcome(/<action>(/<id>))',
     array('language' => $langs_abr,
         'action' => 'index'))

@@ -4,3 +4,6 @@
 [submodule "modules/cassandra"]
 	path = modules/cassandra
 	url = git://github.com/jylinman/kohana-cdm.git
+[submodule "modules/sprig"]
+	path = modules/sprig
+	url = http://github.com/sittercity/sprig.git

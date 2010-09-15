@@ -14,5 +14,5 @@ class Controller_Welcome extends Controller_Layout {
         $this->template->content = View::factory('welcome')
             ->set('title', $page->$title)
             ->set('content', $page->$content);
-	}
+    }
 }
