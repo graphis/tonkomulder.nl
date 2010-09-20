@@ -77,14 +77,14 @@ class Controller_Userguide extends Controller_Template {
 		if ( ! $page)
 		{
 			// Redirect to the default page
-			$this->request->redirect($this->guide->uri(array('page' => 'about.kohana')));
+			$this->request->redirect($this->guide->uri(array('page' => Kohana::config('userguide')->default_page)));
 		}
 
 		$file = $this->file($page);
 
 		if ( ! $file)
 		{
-			$this->error('Userguide page not found');
+			$this->error(__('Userguide page not found'));
 			return;
 		}
 
@@ -123,6 +123,9 @@ class Controller_Userguide extends Controller_Template {
 
 	public function action_api()
 	{
+		// Enable the missing class autoloader
+		spl_autoload_register(array('Kodoc_Missing', 'create_class'));
+
 		// Get the class from the request
 		$class = $this->request->param('class');
 
@@ -133,11 +136,11 @@ class Controller_Userguide extends Controller_Template {
 				$_class = Kodoc_Class::factory($class);
 			
 				if ( ! Kodoc::show_class($_class))
-					throw new Exception("That class is hidden");
+					throw new Exception(__('That class is hidden'));
 			}
 			catch (Exception $e)
 			{
-				return $this->error("API Reference: Class not found.");
+				return $this->error(__('API Reference: Class not found.'));
 			}
 			
 			$this->template->title = $class;
@@ -173,6 +176,9 @@ class Controller_Userguide extends Controller_Template {
 
 	public function action_media()
 	{
+		// Generate and check the ETag for this file
+		$this->request->check_cache(sha1($this->request->uri));
+
 		// Get the file path from the request
 		$file = $this->request->param('file');
 
@@ -203,10 +209,10 @@ class Controller_Userguide extends Controller_Template {
 	public function error($message)
 	{
 		$this->request->status = 404;
-		$this->template->title = "Userguide - Error";
+		$this->template->title = __('User Guide').' - '.__('Error');
 		$this->template->content = View::factory('userguide/error',array('message'=>$message));
 		$this->template->menu = Kodoc::menu();
-		$this->template->breadcrumb = array($this->guide->uri() => 'User Guide', 'Error');
+		$this->template->breadcrumb = array($this->guide->uri() =>  __('User Guide'), __('Error'));
 	}
 
 	public function after()

@@ -63,7 +63,7 @@ class Kohana_ORM {
 	protected $_reload_on_wakeup   = TRUE;
 
 	// Database configuration
-	protected $_db         = 'default';
+	protected $_db         = NULL;
 	protected $_db_applied = array();
 	protected $_db_pending = array();
 	protected $_db_reset   = TRUE;
@@ -1257,6 +1257,9 @@ class Kohana_ORM {
 			// Only fetch 1 record
 			$this->_db_builder->limit(1);
 		}
+
+		// Select all columns by default
+		$this->_db_builder->select($this->_table_name.'.*');
 
 		if ( ! isset($this->_db_applied['order_by']) AND ! empty($this->_sorting))
 		{

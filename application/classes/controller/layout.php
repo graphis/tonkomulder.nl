@@ -3,7 +3,26 @@
 class Controller_Layout extends Controller_Template {
 
 	public $template = 'template/template';
+    public $user;
+    public $auth_required = FALSE;
 
+    public function __construct($request) {
+        parent::__construct($request);
+
+        if($id = Cookie::get('user')) {
+            $user = Sprig::factory('user')
+                ->values(array('id' => $id))
+                ->load();
+
+            if($user->loaded()) {
+                $this->user = $user;
+            }
+        }
+
+        if($this->auth_required AND ! $this->user) {
+            $request->redirect('auth/login');
+        }
+    }
 	public function before() {
 		parent::before();
 		i18n::$lang = Request::instance()->param('language');
@@ -21,12 +40,8 @@ class Controller_Layout extends Controller_Template {
     }
 
     public function navigation() {
-        return array(
-            'home'=>i18n::$lang.'/welcome',
-            'cv' => i18n::$lang.'/cv',
-            'contact' => i18n::$lang.'/contact'
-        );
-            //Kohana::load(print Kohana::find_file('models', 'menu_struct'));
+        $nav = new Model_Navigation();
+        return $nav->menu();
     }
 
 	public function after() {

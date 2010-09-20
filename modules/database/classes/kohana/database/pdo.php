@@ -13,6 +13,17 @@ class Kohana_Database_PDO extends Database {
 	// PDO uses no quoting for identifiers
 	protected $_identifier = '';
 
+	protected function __construct($name, array $config)
+	{
+		parent::__construct($name, $config);
+
+		if (isset($this->_config['identifier']))
+		{
+			// Allow the identifier to be overloaded per-connection
+			$this->_identifier = (string) $this->_config['identifier'];
+		}
+	}
+
 	public function connect()
 	{
 		if ($this->_connection)
@@ -115,7 +126,7 @@ class Kohana_Database_PDO extends Database {
 			{
 				$result->setFetchMode(PDO::FETCH_CLASS, 'stdClass');
 			}
-			
+
 			$result = $result->fetchAll();
 
 			// Return an iterator of results

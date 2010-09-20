@@ -40,3 +40,7 @@ div.content {
 	margin:	5px;
 	padding: 0px 5px 5px 10px;
 }
+
+div.content ul {
+    list-style-type: none;
+}

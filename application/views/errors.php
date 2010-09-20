@@ -1,0 +1,9 @@
+<?php defined('SYSPATH') or die('No direct script access'); ?>
+
+<?php if ( ! empty($errors)): ?>
+  <ul class="errors">
+  <?php foreach ($errors as $field => $error): ?>
+   <li rel="<?php echo $field ?>"><?php echo ucfirst($error) ?></li>
+  <?php endforeach ?>
+  </ul>
+  <?php endif ?>

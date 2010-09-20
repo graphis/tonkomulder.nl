@@ -6,38 +6,30 @@
 
 Route::set('default', '(<language>)(/)(<action>(/<id>))',
     array('language' => $langs_abr,
-        'controller' => 'welcome',
-        'action' => 'index'))
+        'controller' => 'page',
+        'action' => 'get'))
     ->defaults(array(
-        'controller' => 'welcome',
-        'action'     => 'index',
+        'controller' => 'page',
+        'action'     => 'get',
+        'id'         => 'welcome',
         'language' => $default_lang,
     ));
 
-Route::set('login', '(<language>)(/)login(/<action>(/<id>))',
+/*Route::set('login', '(<language>)(/)login(/<action>(/<id>))',
     array('language' => $langs_abr,
-        'action' => 'index'))
+        'action' => 'login|logout'))
     ->defaults(array(
         'controller' => 'login',
-        'action' => 'index',
+        'action' => 'login',
         'language' => $default_lang,
     ));
-
-Route::set('welcome', '(<language>)(/)welcome(/<action>(/<id>))',
+ */
+Route::set('page', '(<language>)(/)page(/<action>(/<id>))',
     array('language' => $langs_abr,
-        'action' => 'index'))
+        'action' => 'get'))
     ->defaults(array(
-        'controller' => 'welcome',
-        'action'     => 'index',
-        'language' => $default_lang,
-    ));
-
-Route::set('cv', '(<language>)(/)cv(/<action>(/<id>))',
-    array('language' => $langs_abr,
-        'action' => 'index'))
-    ->defaults(array(
-        'controller' => 'cv',
-        'action' => 'index',
+        'controller' => 'page',
+        'action'     => 'get',
         'language' => $default_lang,
     ));
 
