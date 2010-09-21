@@ -34,14 +34,19 @@ class Controller_Layout extends Controller_Template {
 			$this->template->styles = array('assets/css/main.css' => 'screen');
 			$this->template->scripts = array();
             $this->template->navigation = View::factory('template/navigation')
-                ->set('content', $this->navigation());
+                ->set('dynamic', $this->getDynamicMenu())
+                ->set('static', $this->getStaticMenu());
 			$this->template->title = i18n::get('layout_title');
 		}
     }
 
-    public function navigation() {
+    public function getDynamicMenu() {
         $nav = new Model_Navigation();
-        return $nav->menu();
+        return $nav->dmenu();
+    }
+    public function getStaticMenu() {
+        $nav = new Model_Navigation();
+        return $nav->smenu();
     }
 
 	public function after() {
