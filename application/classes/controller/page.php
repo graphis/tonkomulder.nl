@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') or die('No direct access');
 
 class Controller_Page extends Controller_Layout {
-    public $template = 'template/template';
+    public $template = 'templates/template';
 
     public function action_get($lang, $page) {
         $req = Request::instance();

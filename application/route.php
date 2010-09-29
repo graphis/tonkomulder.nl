@@ -5,14 +5,17 @@
  */
 
 Route::set('default', '(<language>)(/)(<action>(/<id>))',
-    array('language' => $langs_abr,
-        'controller' => 'page',
-        'action' => 'get'))
+    array(
+        'language'      => $langs_abr,
+        'controller'    => 'page',
+        'action'        => 'get',
+        'id'            => 'welcome'
+    ))
     ->defaults(array(
-        'controller' => 'page',
-        'action'     => 'get',
-        'id'         => 'welcome',
-        'language' => $default_lang,
+        'controller'    => 'page',
+        'action'        => 'get',
+        'id'            => 'welcome',
+        'language'      => $default_lang,
     ));
 
 /*Route::set('login', '(<language>)(/)login(/<action>(/<id>))',
@@ -25,19 +28,19 @@ Route::set('default', '(<language>)(/)(<action>(/<id>))',
     ));
  */
 Route::set('page', '(<language>)(/)page(/<action>(/<id>))',
-    array('language' => $langs_abr,
-        'action' => 'get'))
+    array('language'    => $langs_abr,
+        'action'        => 'get'))
     ->defaults(array(
-        'controller' => 'page',
-        'action'     => 'get',
-        'language' => $default_lang,
+        'controller'    => 'page',
+        'action'        => 'get',
+        'language'      => $default_lang,
     ));
 
 Route::set('contact', '(<language>)(/)contact(/<action>(/<id>))',
-    array('language' => $langs_abr,
-        'action' => 'index'))
+    array('language'    => $langs_abr,
+        'action'        => 'index'))
     ->defaults(array(
-        'controller' => 'contact',
-        'action' => 'index',
-        'language' => $default_lang,
+        'controller'    => 'contact',
+        'action'        => 'index',
+        'language'      => $default_lang,
     ));

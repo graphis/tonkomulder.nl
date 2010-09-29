@@ -2,3 +2,5 @@
 
 <h1><?=$title;?></h1>
 <?=$content;?>
+<p />
+<?= HTML::image('media/img/soul_survivor_steward.gif', array('alt' => 'steward')); ?>

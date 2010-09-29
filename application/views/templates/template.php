@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta http-equiv="Content-Language" content="en-us" />
-	<title><?=$title?></title>	
+	<title><?=$title; ?></title>	
     <meta name="keywords" content="<?=$meta_keywords?>" />
     <meta name="description" content="<?=$meta_description?>" />
     <meta name="copyright" content="<?=$meta_copyright?>" />

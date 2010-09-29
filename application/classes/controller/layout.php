@@ -2,27 +2,10 @@
 
 class Controller_Layout extends Controller_Template {
 
-	public $template = 'template/template';
+	public $template = 'templates/template';
     public $user;
     public $auth_required = FALSE;
 
-    public function __construct($request) {
-        parent::__construct($request);
-
-        if($id = Cookie::get('user')) {
-            $user = Sprig::factory('user')
-                ->values(array('id' => $id))
-                ->load();
-
-            if($user->loaded()) {
-                $this->user = $user;
-            }
-        }
-
-        if($this->auth_required AND ! $this->user) {
-            $request->redirect('auth/login');
-        }
-    }
 	public function before() {
 		parent::before();
 		i18n::$lang = Request::instance()->param('language');
@@ -33,7 +16,7 @@ class Controller_Layout extends Controller_Template {
 			$this->template->meta_copyright = '';
 			$this->template->styles = array('assets/css/main.css' => 'screen');
 			$this->template->scripts = array();
-            $this->template->navigation = View::factory('template/navigation')
+            $this->template->navigation = View::factory('templates/navigation')
                 ->set('dynamic', $this->getDynamicMenu())
                 ->set('static', $this->getStaticMenu());
 			$this->template->title = i18n::get('layout_title');

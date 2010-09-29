@@ -2,9 +2,9 @@
 <?
 return array
 (
-    'layout_title' => 'www.tonkomulder.nl',
+    'layout_title' => 'www.stichtingvce.nl',
     'main_welkom' => 'Welkom',
-    'main_welkom_text' => 'Welkom op www.tonkomulder.nl',
+    'main_welkom_text' => 'Welkom op www.stichtingvce.nl',
 
     // Login form
     'login_name' => 'Naam: ',
