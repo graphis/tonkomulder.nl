@@ -1,5 +1,5 @@
-<?php defined('SYSPATH') or die('No direct script access'); ?>
-<?
+<?php defined('SYSPATH') or die('No direct script access');
+
 return array
 (
     'layout_title' => 'www.stichtingvce.nl',
@@ -9,5 +9,5 @@ return array
     // Login form
     'login_name' => 'Naam: ',
     'login_password' => 'Wachtwoord: ',
-)
-?>
+);
+

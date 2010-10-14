@@ -7,3 +7,6 @@
 [submodule "modules/sprig"]
 	path = modules/sprig
 	url = http://github.com/sittercity/sprig.git
+[submodule "system"]
+	path = system
+	url = http://github.com/kohana/core.git
